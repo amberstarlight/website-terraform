@@ -24,28 +24,17 @@ resource "aws_cloudfront_distribution" "this" {
   price_class         = "PriceClass_100"
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD"]
-    cached_methods   = ["GET", "HEAD"]
-    compress         = true
-    target_origin_id = local.s3_origin_id
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    compress               = true
+    target_origin_id       = local.s3_origin_id
+    cache_policy_id        = data.aws_cloudfront_cache_policy.caching_optimized.id
+    viewer_protocol_policy = "redirect-to-https"
 
     function_association {
       event_type   = "viewer-request"
       function_arn = aws_cloudfront_function.directory_index_rewrite.arn
     }
-
-    viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
   }
 
   viewer_certificate {
