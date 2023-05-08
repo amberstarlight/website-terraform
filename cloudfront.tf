@@ -23,6 +23,12 @@ resource "aws_cloudfront_distribution" "this" {
   is_ipv6_enabled     = true
   price_class         = "PriceClass_100"
 
+  custom_error_response {
+    error_code         = 403
+    response_code      = 404
+    response_page_path = "/404.html"
+  }
+
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
