@@ -78,3 +78,11 @@ resource "aws_cloudfront_function" "directory_index_rewrite" {
   publish = true
   code    = file("${path.module}/function.js")
 }
+
+resource "aws_route53_record" "keybase_txt" {
+  zone_id = data.aws_route53_zone.this.zone_id
+  name    = var.base_domain
+  type    = "TXT"
+  ttl     = 3600
+  records = [var.keybase_txt_record]
+}
