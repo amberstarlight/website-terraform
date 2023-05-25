@@ -22,4 +22,9 @@ jobs:
 
       - run: terraform init
       - run: terraform validate -no-color
+
+      # horrible hack because i dont have the time to get creds
+      # remove in next commit and force push to overwrite it lol
+      - run: terraform import aws_route53_record.txt Z01764393G8GHB9SR3BK3_amber.vision_TXT
+
       - run: terraform apply -auto-approve -input=false
