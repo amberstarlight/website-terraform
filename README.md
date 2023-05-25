@@ -30,8 +30,8 @@ Terraform for website resources on AWS
 | [aws_cloudfront_distribution.this](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/resources/cloudfront_distribution) | resource |
 | [aws_cloudfront_function.directory_index_rewrite](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/resources/cloudfront_function) | resource |
 | [aws_cloudfront_origin_access_identity.this](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/resources/cloudfront_origin_access_identity) | resource |
-| [aws_route53_record.keybase_txt](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/resources/route53_record) | resource |
 | [aws_route53_record.main](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/resources/route53_record) | resource |
+| [aws_route53_record.txt](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/resources/route53_record) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/data-sources/caller_identity) | data source |
 | [aws_cloudfront_cache_policy.caching_optimized](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/data-sources/cloudfront_cache_policy) | data source |
 | [aws_iam_policy_document.bucket_policy](https://registry.terraform.io/providers/hashicorp/aws/4.64.0/docs/data-sources/iam_policy_document) | data source |

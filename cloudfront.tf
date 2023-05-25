@@ -79,10 +79,13 @@ resource "aws_cloudfront_function" "directory_index_rewrite" {
   code    = file("${path.module}/function.js")
 }
 
-resource "aws_route53_record" "keybase_txt" {
+resource "aws_route53_record" "txt" {
   zone_id = data.aws_route53_zone.this.zone_id
   name    = var.base_domain
   type    = "TXT"
   ttl     = 3600
-  records = [var.keybase_txt_record]
+  records = [
+    "v=spf1 include:spf.messagingengine.com ?all",
+    var.keybase_txt_record
+  ]
 }
