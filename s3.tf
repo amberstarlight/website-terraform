@@ -1,5 +1,5 @@
 module "bucket" {
-  source = "github.com/terraform-aws-modules/terraform-aws-s3-bucket.git?ref=v3.8.2"
+  source = "github.com/terraform-aws-modules/terraform-aws-s3-bucket.git?ref=v3.14.1"
   bucket = "website-${local.account_id}"
 
   block_public_acls       = true
