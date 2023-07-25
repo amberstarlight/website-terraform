@@ -1,8 +1,8 @@
-name: Format, Validate, and Plan
+name: Apply
 
 on:
   push:
-    branches-ignore:
+    branches:
       - main
 
 env:
@@ -12,13 +12,11 @@ env:
   TF_CLI_ARGS: "-no-color"
 
 jobs:
-  fmt_validate_plan:
+  apply:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
 
       - run: terraform init
-      - run: terraform fmt -check
-      - run: terraform validate
-      - run: terraform plan
+      - run: terraform apply -auto-approve -input=false
