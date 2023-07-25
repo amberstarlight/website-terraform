@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
 
-      - run: terraform init
+      - run: terraform init -upgrade
       - run: terraform fmt -check
       - run: terraform validate
       - run: terraform plan
