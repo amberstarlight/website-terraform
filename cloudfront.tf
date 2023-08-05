@@ -55,6 +55,10 @@ resource "aws_cloudfront_distribution" "this" {
     }
   }
 
+  logging_config {
+    bucket = module.logs.s3_bucket_bucket_regional_domain_name
+  }
+
   depends_on = [
     module.acm.acm_certificate_arn
   ]

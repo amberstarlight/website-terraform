@@ -22,6 +22,7 @@ Terraform for website resources on AWS
 |------|--------|---------|
 | <a name="module_acm"></a> [acm](#module\_acm) | github.com/terraform-aws-modules/terraform-aws-acm.git | v4.3.2 |
 | <a name="module_bucket"></a> [bucket](#module\_bucket) | github.com/terraform-aws-modules/terraform-aws-s3-bucket.git | v3.14.1 |
+| <a name="module_logs"></a> [logs](#module\_logs) | github.com/terraform-aws-modules/terraform-aws-s3-bucket.git | v3.14.1 |
 
 ## Resources
 

@@ -21,3 +21,16 @@ data "aws_iam_policy_document" "bucket_policy" {
     }
   }
 }
+
+module "logs" {
+  source = "github.com/terraform-aws-modules/terraform-aws-s3-bucket.git?ref=v3.14.1"
+
+  bucket = "logs-${local.account_id}"
+  acl    = "log-delivery-write"
+
+  # Allow deletion of non-empty bucket
+  force_destroy = true
+
+  control_object_ownership = true
+  object_ownership         = "ObjectWriter"
+}
