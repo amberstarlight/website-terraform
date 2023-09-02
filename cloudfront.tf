@@ -59,6 +59,8 @@ resource "aws_cloudfront_distribution" "this" {
     bucket = module.logs.s3_bucket_bucket_domain_name
   }
 
+  web_acl_id = aws_wafv2_web_acl.this.arn
+
   depends_on = [
     module.acm.acm_certificate_arn
   ]
