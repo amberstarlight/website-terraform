@@ -43,6 +43,8 @@ resource "aws_wafv2_web_acl" "this" {
 # Potentially could change.
 # https://openai.com/gptbot-ranges.txt
 resource "aws_wafv2_ip_set" "openai_ranges" {
+  provider = aws.us_east_1
+
   name               = "gptbot"
   scope              = "CLOUDFRONT"
   ip_address_version = "IPV4"
