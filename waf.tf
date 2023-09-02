@@ -25,6 +25,12 @@ resource "aws_wafv2_web_acl" "this" {
         arn = aws_wafv2_ip_set.openai_ranges.arn
       }
     }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "BlockedRequests"
+      sampled_requests_enabled   = true
+    }
   }
 
   visibility_config {
