@@ -17,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.5
 
       - run: terraform init
       - run: terraform apply -auto-approve -input=false
